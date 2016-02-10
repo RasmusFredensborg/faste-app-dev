@@ -21,7 +21,7 @@ public class RasmusJActivity extends YouTubeBaseActivity implements YouTubePlaye
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-        youTubePlayer.cueVideo("wKJ9KzGQq0w");
+        youTubePlayer.cueVideo("eKrn6p0Aj3w");
     }
 
     @Override
