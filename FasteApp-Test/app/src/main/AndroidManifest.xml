@@ -18,9 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RasmusJActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
             android:name=".youtube"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity android:name=".YouTubeFailureRecoveryActivity" />
@@ -28,6 +25,7 @@
             android:screenOrientation="sensor"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
+        <activity android:name=".RasmusJActivity"/>
     </application>
 
 </manifest>
