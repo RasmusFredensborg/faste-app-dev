@@ -49,13 +49,10 @@ public class YTtest2 extends YouTubeFailureRecoveryActivity implements YouTubePl
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
-        this.player = player;
-        player.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
-        player.setOnFullscreenListener(this);
-        int controlFlags = player.getFullscreenControlFlags();
         setRequestedOrientation(PORTRAIT_ORIENTATION);
-        controlFlags |= YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
-        player.setFullscreenControlFlags(controlFlags);
+        player.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
+        player.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE);
+        player.setOnFullscreenListener(this);
         if (!wasRestored) {
             player.loadVideo(videoToPlay);
         }
