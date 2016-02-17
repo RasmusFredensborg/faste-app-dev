@@ -27,7 +27,7 @@ public class YTtest2 extends YouTubeFailureRecoveryActivity implements YouTubePl
     private View otherViews;
 
     private boolean fullscreen;
-    private String videoToPlay;
+    private String videoToPlay = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,9 @@ public class YTtest2 extends YouTubeFailureRecoveryActivity implements YouTubePl
         setContentView(R.layout.activity_yttest2);
 
         Intent intent = getIntent();
-        videoToPlay = intent.getStringExtra("video");
+        if (intent.getStringExtra("video") != null) {
+            videoToPlay = intent.getStringExtra("video");
+        }
 
         playerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         otherViews = findViewById(R.id.other_views);
