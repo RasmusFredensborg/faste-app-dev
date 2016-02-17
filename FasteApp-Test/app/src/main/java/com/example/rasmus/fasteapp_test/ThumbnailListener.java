@@ -1,8 +1,14 @@
 package com.example.rasmus.fasteapp_test;
 
+import android.content.Intent;
+import android.view.View;
+
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
+
+import static android.support.v4.app.ActivityCompat.startActivity;
+
 
 /**
  * Created by rasmus on 16-02-2016.
