@@ -1,60 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/card_view"
 	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:orientation="vertical">
+	android:layout_height="wrap_content">
 
-	<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-		android:id="@+id/card_view"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_margin="8dp">
+	<RelativeLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
 
-		<RelativeLayout
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
+		<com.google.android.youtube.player.YouTubeThumbnailView
+			android:id="@+id/thumbnail"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/loading_thumbnail"
+			android:adjustViewBounds="true"
+			android:scaleType="centerInside"/>
 
-			<com.google.android.youtube.player.YouTubeThumbnailView
-				android:id="@+id/thumbnail"
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/thumbnail"
+			android:orientation="horizontal">
+			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:src="@drawable/loading_thumbnail"/>
-
-			<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				android:layout_width="match_parent"
+				android:maxLines="3"
+				android:padding="8dp"
+				android:text="description"
+				android:textColor="#666"
+				android:textSize="14dp" />
+			<RelativeLayout
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_below="@+id/thumbnail"
-				android:orientation="horizontal">
+				android:layout_alignParentRight="true"
+				android:layout_centerInParent="true" >
+				<ImageView
+					android:layout_width="12dp"
+					android:layout_height="12dp"
+					android:id="@+id/imageView"
+					android:layout_centerVertical="true"
+					android:src="@drawable/eye_icon"/>
 				<TextView
+					android:id="@+id/viewCount"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:maxLines="3"
-					android:padding="8dp"
-					android:text="description"
-					android:textColor="#666"
+					android:layout_toRightOf="@id/imageView"
+					android:maxLines="1"
+					android:layout_centerInParent="true"
+					android:layout_marginRight="8dp"
+					android:layout_marginLeft="8dp"
+					android:text="20"
+					android:textColor="@color/monteCarlo"
 					android:textSize="14dp" />
-				<RelativeLayout
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentRight="true">
-					<ImageView
-						android:layout_width="12dp"
-						android:layout_height="12dp"
-						android:id="@+id/imageView"
-						android:layout_centerVertical="true"
-						android:src="@drawable/eye_icon"/>
-					<TextView
-						android:id="@+id/viewCount"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_toRightOf="@id/imageView"
-						android:maxLines="1"
-						android:padding="8dp"
-						android:text="20"
-						android:textColor="@color/monteCarlo"
-						android:textSize="14dp" />
-				</RelativeLayout>
 			</RelativeLayout>
 		</RelativeLayout>
-	</android.support.v7.widget.CardView>
-</LinearLayout>
+	</RelativeLayout>
+</android.support.v7.widget.CardView>
