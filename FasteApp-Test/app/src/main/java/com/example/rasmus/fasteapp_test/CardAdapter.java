@@ -55,11 +55,12 @@ public class CardAdapter extends BaseAdapter {
         if (convertView == null) {
             gridView =  inflater.inflate(R.layout.grid_card_item,parent,false);
             YouTubeThumbnailView thumbnail = (YouTubeThumbnailView) gridView.findViewById(R.id.thumbnail);
+
             thumbnail.initialize(DeveloperKey.DEVELOPER_KEY,thumbnailListener);
             thumbnail.setTag(videos[position]);
 
         } else {
-            gridView = (View) convertView;
+            gridView = convertView;
         }
 
         return gridView;

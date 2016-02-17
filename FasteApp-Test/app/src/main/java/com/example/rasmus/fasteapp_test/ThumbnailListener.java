@@ -21,7 +21,8 @@ public final class ThumbnailListener implements
     public void onInitializationSuccess(
             YouTubeThumbnailView view, YouTubeThumbnailLoader loader) {
         loader.setOnThumbnailLoadedListener(this);
-//            view.setImageResource(R.drawable.loading_thumbnail);
+
+//        view.setImageResource(R.drawable.loading_thumbnail);
         String videoId = (String) view.getTag();
         loader.setVideo(videoId);
     }

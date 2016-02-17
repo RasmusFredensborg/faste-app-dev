@@ -1,47 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
 
-	Read more: http://www.androidhub4you.com/2013/07/custom-grid-view-example-in-android.html#ixzz40K7ABZA2
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/card_view"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:layout_margin="8dp">
-
-	<RelativeLayout
+	<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/card_view"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:layout_margin="8dp">
 
-		<com.google.android.youtube.player.YouTubeThumbnailView
-			android:id="@+id/thumbnail"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
 
-		<TextView
-			android:id="@+id/title"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_below="@+id/thumbnail"
-			android:maxLines="3"
-			android:padding="8dp"
-			android:text="Title"
-			android:textColor="#222"
-			android:textStyle="bold"
-			android:textSize="22dp" />
+			<com.google.android.youtube.player.YouTubeThumbnailView
+				android:id="@+id/thumbnail"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/loading_thumbnail"/>
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_below="@+id/title"
-			android:maxLines="3"
-			android:padding="8dp"
-			android:text="description"
-			android:textColor="#666"
-			android:textSize="14dp" />
-
-	</RelativeLayout>
-</android.support.v7.widget.CardView>
+			<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/thumbnail"
+				android:orientation="horizontal">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:maxLines="3"
+					android:padding="8dp"
+					android:text="description"
+					android:textColor="#666"
+					android:textSize="14dp" />
+				<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true">
+					<ImageView
+						android:layout_width="12dp"
+						android:layout_height="12dp"
+						android:id="@+id/imageView"
+						android:layout_centerVertical="true"
+						android:src="@drawable/eye_icon"/>
+					<TextView
+						android:id="@+id/viewCount"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_toRightOf="@id/imageView"
+						android:maxLines="1"
+						android:padding="8dp"
+						android:text="20"
+						android:textColor="@color/monteCarlo"
+						android:textSize="14dp" />
+				</RelativeLayout>
+			</RelativeLayout>
+		</RelativeLayout>
+	</android.support.v7.widget.CardView>
 </LinearLayout>
