@@ -57,7 +57,7 @@ public class YTtest2 extends YouTubeFailureRecoveryActivity implements YouTubePl
         controlFlags |= YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
         player.setFullscreenControlFlags(controlFlags);
         if (!wasRestored) {
-            player.cueVideo(videoToPlay);
+            player.loadVideo(videoToPlay);
         }
     }
 
