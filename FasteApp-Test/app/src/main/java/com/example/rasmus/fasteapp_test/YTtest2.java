@@ -3,6 +3,7 @@ package com.example.rasmus.fasteapp_test;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -26,11 +27,15 @@ public class YTtest2 extends YouTubeFailureRecoveryActivity implements YouTubePl
     private View otherViews;
 
     private boolean fullscreen;
+    private String videoToPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yttest2);
+
+        Intent intent = getIntent();
+        videoToPlay = intent.getStringExtra("video");
 
         playerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         otherViews = findViewById(R.id.other_views);
@@ -50,7 +55,7 @@ public class YTtest2 extends YouTubeFailureRecoveryActivity implements YouTubePl
         controlFlags |= YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
         player.setFullscreenControlFlags(controlFlags);
         if (!wasRestored) {
-            player.cueVideo("avP5d16wEp0");
+            player.cueVideo(videoToPlay);
         }
     }
 

@@ -21,9 +21,13 @@
             android:name=".youtube"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity android:name=".YouTubeFailureRecoveryActivity" />
+
+
         <activity android:name=".YTtest2"
             android:screenOrientation="sensor"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            >
         </activity>
         <activity android:name=".RasmusJActivity"/>
     </application>
