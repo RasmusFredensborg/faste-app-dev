@@ -58,6 +58,16 @@ public class CardAdapter extends BaseAdapter {
                 videoID = videoMetadata.getJSONObject(position).getString("id");
                 title = videoMetadata.getJSONObject(position).getJSONObject("snippet").getString("title");
                 viewCount = videoMetadata.getJSONObject(position).getJSONObject("statistics").getString("viewCount");
+
+                // If the viewCount is above four digits
+                try {
+                    int getViewCount = Integer.parseInt(viewCount);
+                    if (getViewCount > 9999) {
+                        viewCount = "9999+";
+                    }
+                } catch (NumberFormatException | NullPointerException e) {
+                    e.printStackTrace();
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
