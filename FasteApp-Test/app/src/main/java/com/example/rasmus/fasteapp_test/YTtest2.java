@@ -35,7 +35,7 @@ public class YTtest2 extends YouTubeFailureRecoveryActivity implements YouTubePl
         setContentView(R.layout.activity_yttest2);
 
         Intent intent = getIntent();
-        if (intent.getStringExtra("video") != null) {
+        if (intent.getStringExtra("videoData") != null) {
             videoToPlay = intent.getStringExtra("video");
         }
 
