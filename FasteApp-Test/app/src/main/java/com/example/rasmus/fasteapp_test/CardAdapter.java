@@ -1,28 +1,16 @@
-package com.example.rasmus.fasteapp_test; /**
- * Created by rasmus on 16-02-2016.
- */
-import android.app.Activity;
+package com.example.rasmus.fasteapp_test;
+
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.rasmus.fasteapp_test.DeveloperKey;
-import com.example.rasmus.fasteapp_test.R;
-import com.example.rasmus.fasteapp_test.ThumbnailListener;
 import com.google.android.youtube.player.YouTubeThumbnailView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 public class CardAdapter extends BaseAdapter {
     private Context mContext;

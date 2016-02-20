@@ -1,6 +1,5 @@
 package com.example.rasmus.fasteapp_test;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -39,7 +38,7 @@ public class RasmusJActivity extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_rasmus_j);
         gridView = (GridView) findViewById(R.id.grid_view);
         videoMetadata = new JSONArray();
-        new getVideoMetaData().execute(videos);
+        new getVideoMetadata().execute(videos);
     }
 
     /*
@@ -64,7 +63,7 @@ public class RasmusJActivity extends AppCompatActivity implements AdapterView.On
     In the onPostExecute method the items array is fetched from the JSONObject and stored.
     Lastly the gridView is populated with the metadata.
      */
-    private class getVideoMetaData extends AsyncTask<String, String, JSONObject> {
+    private class getVideoMetadata extends AsyncTask<String, String, JSONObject> {
 
         protected JSONObject doInBackground(String... videoURLS) {
             JSONObject jsonObjectToReturn = new JSONObject();
@@ -74,13 +73,16 @@ public class RasmusJActivity extends AppCompatActivity implements AdapterView.On
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                 BufferedReader streamReader = new BufferedReader(new InputStreamReader(in));
                 StringBuilder stringBuilder = new StringBuilder();
-
-                String inputString;
-                while((inputString = streamReader.readLine()) != null) {
-                    stringBuilder.append(inputString);
+                try {
+                    String inputString;
+                    while ((inputString = streamReader.readLine()) != null) {
+                        stringBuilder.append(inputString);
+                    }
+                } finally {
+                    urlConnection.disconnect();
+                    streamReader.close();
                 }
                 jsonObjectToReturn = new JSONObject(stringBuilder.toString());
-                urlConnection.disconnect();
             } catch (Exception e) {
                 Log.e("Error: ", e.getMessage());
             }
